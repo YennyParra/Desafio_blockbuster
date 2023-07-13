@@ -13,6 +13,7 @@ class ClientsController < ApplicationController
   # GET /clients/new
   def new
     @client = Client.new
+    @movies = Movie.all.pluck :name, :id
   end
 
   # GET /clients/1/edit
@@ -22,6 +23,7 @@ class ClientsController < ApplicationController
   # POST /clients or /clients.json
   def create
     @client = Client.new(client_params)
+    #@client.movie = Movie.all.pluck :name, 
 
     respond_to do |format|
       if @client.save

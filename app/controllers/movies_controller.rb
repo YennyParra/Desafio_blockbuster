@@ -13,16 +13,20 @@ class MoviesController < ApplicationController
   # GET /movies/new
   def new
     @movie = Movie.new
+    @clients = Client.all.pluck :name, :id
+    
   end
 
   # GET /movies/1/edit
   def edit
+    @clients = Client.all.pluck :name, :id
   end
 
   # POST /movies or /movies.json
   def create
     @movie = Movie.new(movie_params)
-
+    
+     
     respond_to do |format|
       if @movie.save
         format.html { redirect_to movie_url(@movie), notice: "Movie was successfully created." }
@@ -36,6 +40,7 @@ class MoviesController < ApplicationController
 
   # PATCH/PUT /movies/1 or /movies/1.json
   def update
+    @clients = Client.all.pluck :name, :id
     respond_to do |format|
       if @movie.update(movie_params)
         format.html { redirect_to movie_url(@movie), notice: "Movie was successfully updated." }
@@ -49,6 +54,7 @@ class MoviesController < ApplicationController
 
   # DELETE /movies/1 or /movies/1.json
   def destroy
+    @clients = Client.all.pluck :name, :id
     @movie.destroy
 
     respond_to do |format|
@@ -65,6 +71,6 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:name, :client_id)
+      params.require(:movie).permit(:name, :age, :client_id)
     end
 end

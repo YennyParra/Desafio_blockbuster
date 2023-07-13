@@ -8,13 +8,14 @@
 <table class="table table-striped">
 <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">id</th>
           <th scope="col">Name</th>
           <th scope="col">Age</th>
           <th scope="col">Movie</th>
           <th scope="col" colspan="3"></th>
         </tr>
       </thead>
+      
 <tbody>
 <% @clients.each do |client| %>
     <%= render client %>
