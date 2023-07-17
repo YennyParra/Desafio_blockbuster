@@ -1,4 +1,9 @@
 <div id="<%= dom_id client %>">
+<tr>
+<th scope= "row"><%= client.id %></th>
+<th><%= client.name %></th>
+<td><%= client.age %></td>
+
   <p>
     <strong>Name:</strong>
     <%= client.name %>
@@ -8,5 +13,10 @@
     <strong>Age:</strong>
     <%= client.age %>
   </p>
+<p>
+    <strong>Movie:</strong>
+    <%= client.movie %>
+  </p>
+
 
 </div>

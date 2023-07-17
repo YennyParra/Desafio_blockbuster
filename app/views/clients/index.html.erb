@@ -2,7 +2,7 @@
 <div class="container">
 <h1>Clients</h1>
 
-<%= link_to "New client", new_client_path %>
+
  
 <div id="clients">
 <table class="table table-striped">
@@ -17,11 +17,20 @@
       </thead>
       
 <tbody>
+
 <% @clients.each do |client| %>
-    <%= render client %>
-<p>
-<%= link_to "Show this client", client %>
-</p>
+<tr>
+<td><%= client.id %></td>
+<td><%= client.name %></td>
+<td><%= client.age %></td>
+<td><%= client.movie %></td>
+<td><%= client.movie.name if client.movie %></td>
+<td><%= link_to "Show this client", client %></td>
+<td><%= link_to "New client", new_client_path %></td>
+
+<%= render client %>
+
+
 <% end %>
 
 

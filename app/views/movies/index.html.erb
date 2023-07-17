@@ -1,14 +1,32 @@
 <p style="color: green"><%= notice %></p>
-
+<div class= "contianer">
 <h1>Movies</h1>
 
 <div id="movies">
+<table class="table table-striped">
+<thead>
+<tr>
+<th scope="col">Movie</th>
+<th scope="col">Cliente</th>
+<th scope="col">Client.id</th>
+<th scope="col" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+
   <% @movies.each do |movie| %>
+<tr>
+<td><%= movie.name%></td>
+<td><%= movie.client%></td>
+<td><%= movie.client.id%></td>
+
+
+<td><%= link_to "Show this movie", movie %></td>
+
     <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
+    
   <% end %>
 </div>
-
+</div>
 <%= link_to "New movie", new_movie_path %>
