@@ -22,11 +22,13 @@
 <td><%= movie.client.id%></td>
 
 
-<td><%= link_to "Show this movie", movie %></td>
+<td type="button", class= "btn btn-dark"><%= link_to "Show this movie", movie %></td>
 
     <%= render movie %>
     
   <% end %>
 </div>
 </div>
+ <div type= "button", class= "btn btn-dark">
 <%= link_to "New movie", new_movie_path %>
+</div>

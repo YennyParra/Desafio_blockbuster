@@ -23,10 +23,10 @@
 <td><%= client.id %></td>
 <td><%= client.name %></td>
 <td><%= client.age %></td>
-<td><%= client.movie %></td>
-<td><%= client.movie.name if client.movie %></td>
-<td><%= link_to "Show this client", client %></td>
-<td><%= link_to "New client", new_client_path %></td>
+<td><%= client.movies.name if client.movies.name %></td>
+
+<td type= "button", class= "btn btn-dark"><%= link_to "Show this client", client %></td>
+<td type= "button", class= "btn btn-dark"><%= link_to "New client", new_client_path %></td>
 
 <%= render client %>
 
