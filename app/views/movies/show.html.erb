@@ -3,19 +3,6 @@
 <%= render @movie %>
 
 
-<div id="movies">
-<table class="table table-striped">
-<thead>
-<tr>
-<th scope="col">Movie</th>
-<th scope="col">Cliente</th>
-<th scope="col">Client.id</th>
-<th scope="col" colspan="2"></th>
-</tr>
-</thead>
-
-
-
 <div>
   <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
   <%= link_to "Back to movies", movies_path %>

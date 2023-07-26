@@ -3,20 +3,10 @@
 <th scope= "row"><%= client.id %></th>
 <th><%= client.name %></th>
 <td><%= client.age %></td>
-
-  <p>
-    <strong>Name:</strong>
-    <%= client.name %>
-  </p>
-
-  <p>
-    <strong>Age:</strong>
-    <%= client.age %>
-  </p>
-<p>
-    <strong>Movie:</strong>
-    <%= client.movies.name %>
-  </p>
-
+<td><%=client.movies.last%></td>
+<td type= "button", class= "btn btn-dark"><%= link_to "Edit this client", edit_client_path(client) %></td>
+<td type= "button", class= "btn btn-dark"><%= link_to "Show this client", client %></td>
+<td type= "button", class= "btn btn-dark"><%= button_to "Destroy this client", @client, method: :delete %></td>
+</tr>
 
 </div>
