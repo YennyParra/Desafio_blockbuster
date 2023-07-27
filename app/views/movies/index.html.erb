@@ -2,33 +2,16 @@
 <div class= "contianer">
 <h1>Movies</h1>
 
+<%= link_to "New Movie", new_movie_path %>
 <div id="movies">
-<table class="table table-striped">
-<thead>
-<tr>
-<th scope="col">Movie</th>
-<th scope="col">Cliente</th>
-<th scope="col">Client.id</th>
-<th scope="col" colspan="2"></th>
-</tr>
-</thead>
-
-<tbody>
-
-  <% @movies.each do |movie| %>
-<tr>
-<td><%= movie.name%></td>
-<td><%= movie.client%></td>
-<td><%= movie.client.id%></td>
-
-
-<td type="button", class= "btn btn-dark"><%= link_to "Show this movie", movie %></td>
-
-    <%= render movie %>
-    
+<div class= "row">
+<% @movies.each do |movie| %>
+  <% render movie %>
   <% end %>
-</div>
-</div>
- <div type= "button", class= "btn btn-dark">
-<%= link_to "New movie", new_movie_path %>
-</div>
+  </div>
+  </div>
+  </div>
+
+
+
+

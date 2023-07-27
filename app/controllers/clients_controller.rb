@@ -13,12 +13,13 @@ class ClientsController < ApplicationController
   # GET /clients/new
   def new
     @client = Client.new
-    @movies = Movie.all.pluck :name
+    @client.movies.build
+   
   end
 
   # GET /clients/1/edit
   def edit
-    @movies = Movie.all.pluck :name
+    
   end
 
   # POST /clients or /clients.json
@@ -38,11 +39,10 @@ class ClientsController < ApplicationController
 
   # PATCH/PUT /clients/1 or /clients/1.json
   def update
-    @movies = Movie.all.pluck :name
     respond_to do |format|
       if @client.update(client_params)
-        format.html { redirect_to client_url(@client), notice: "Client was successfully updated." }
-        format.json { render :show, status: :ok, location: @client }
+       format.html { redirect_to client_url(@client), notice: "Client was successfully updated." }
+       format.json { render :show, status: :ok, location: @client }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @client.errors, status: :unprocessable_entity }
