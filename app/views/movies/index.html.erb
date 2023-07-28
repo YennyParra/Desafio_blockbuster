@@ -1,17 +1,21 @@
 <p style="color: green"><%= notice %></p>
-<div class= "contianer">
+<div class= "contianer " >
+
 <h1>Movies</h1>
 
-<%= link_to "New Movie", new_movie_path %>
+<div type= "button", class="btn btn-dark" ><%= link_to "New Movie", new_movie_path %></div>
+
 <div id="movies">
-<div class= "row">
+
+<ul class= "row row-sm-6 mb-3 mb-sm-0">
+
 <% @movies.each do |movie| %>
-  <% render movie %>
+<div class="card-d-inline-flex" style= "max-width: 50rem">
+<div class= "card-body text-tarjeta " >
+<%= render movie %>
   <% end %>
   </div>
   </div>
   </div>
-
-
-
-
+  </div>
+</ul>

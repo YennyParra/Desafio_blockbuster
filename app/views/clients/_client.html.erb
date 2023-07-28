@@ -4,8 +4,8 @@
 <th><%= client.name %></th>
 <td><%= client.age %></td>
 <td><%=client.movies.last%></td>
-<td type= "button", class= "btn btn-dark"><%= link_to "Edit this client", edit_client_path(client) %></td>
-<td type= "button", class= "btn btn-dark"><%= link_to "Show this client", client %></td>
+<td type= "button", class= "btn btn-dark"><%= button_to "Edit this client", edit_client_path(client) %></td>
+<td type= "button", class= "btn btn-dark"><%= button_to "Show this client", client %></td>
 <td type= "button", class= "btn btn-dark"><%= button_to "Destroy this client", @client, method: :delete %></td>
 </tr>
 
