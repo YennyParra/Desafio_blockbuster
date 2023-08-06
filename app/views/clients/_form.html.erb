@@ -20,6 +20,10 @@
     <%= form.label :age, style: "display: block" %>
     <%= form.text_field :age %>
   </div>
+  <div>
+    <%= form.label :movie, style: "display: block" %>
+    <%= form.select :movie_id, options_for_select(Movie.all.pluck :name, :id) %>
+  </div>
 
   <div>
     <%= form.submit %>
