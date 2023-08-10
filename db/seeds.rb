@@ -14,7 +14,7 @@
 
 50.times do
     Movie.create!([
-      { name: Faker::Movie.title }
+      { name: Faker::Movie.title, client_id: }
     ])
   end
   
